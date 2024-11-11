@@ -8,43 +8,70 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+
+    min-height: 100vh;
+    /* Asegura que el cuerpo de la página ocupe al menos toda la altura de la pantalla */
+    display: flex;
+    /* Usamos Flexbox para que el contenido ocupe el 100% del espacio disponible */
+    flex-direction: column;
+    /* Asegura que el contenido se apile verticalmente */
+    margin-bottom: 60px;
+    /* Deja espacio suficiente en la parte inferior para que el footer no tape el contenido */
+
 }
+
+
 
 /* Estilos para el header */
 .header {
-    display: flex;                      /* Utilizamos Flexbox */
-    align-items: center;                /* Alineamos los elementos verticalmente */
-    justify-content: space-between;     /* Distribuimos los elementos a los extremos */
-    width: 100%;                         /* El header ocupa todo el ancho de la pantalla */
-    padding: 20px 30px;                  /* Espaciado alrededor del header */
+    display: flex;
+    /* Utilizamos Flexbox */
+    align-items: center;
+    /* Alineamos los elementos verticalmente */
+    justify-content: space-between;
+    /* Distribuimos los elementos a los extremos */
+    width: 100%;
+    /* El header ocupa todo el ancho de la pantalla */
+    padding: 20px 30px;
+    /* Espaciado alrededor del header */
     background-color: #fff;
     /* border-bottom: 2px solid #ccc;      Línea divisoria debajo */
+}
+/* Estilos para el logo */
+.logo img {
+    display: flex;
+    max-height: 50px; /* Controla el tamaño máximo del logo */
 }
 
 /* Contenedor de logos (solo el logo de HelpNow) */
 .header .logo {
     display: flex;
-    align-items: center;                /* Alineamos la imagen verticalmente */
+    align-items: center;
+    /* Alineamos la imagen verticalmente */
+    max-height: 100px;
+
 }
 
-.header .logo img {
-    max-height: 100px;                   /* Tamaño máximo de la imagen */
-    /* Si necesitas un tamaño más ajustado, puedes usar width en lugar de max-height, como max-width: 100px; */
-}
+
 
 /* Menú centrado */
 .header__nav {
     display: flex;
-    justify-content: end;             /* Centra el menú horizontalmente */
-    flex-grow: 1;                        /* Permite que el menú ocupe el espacio restante */
+    justify-content: end;
+    /* Centra el menú horizontalmente */
+    flex-grow: 1;
+    /* Permite que el menú ocupe el espacio restante */
 }
 
 
 .nav__list {
     list-style-type: none;
-    display: flex;                   /* Alinea los elementos de forma horizontal */
-    justify-content: flex-end;         /* Centra los elementos de la lista */
-    gap: 20px;                       /* Espacio entre los elementos */
+    display: flex;
+    /* Alinea los elementos de forma horizontal */
+    justify-content: flex-end;
+    /* Centra los elementos de la lista */
+    gap: 20px;
+    /* Espacio entre los elementos */
 }
 
 .nav__item a {
@@ -56,8 +83,10 @@ body {
 }
 
 .nav__item a:hover {
-    color: #007bff;  /* Cambia el color cuando el usuario pasa el ratón */
+    color: #007bff;
+    /* Cambia el color cuando el usuario pasa el ratón */
 }
+
 /* Main */
 .main {
     text-align: center;
@@ -76,77 +105,79 @@ body {
 
 
 .catastrophes {
-  display: grid;
-  gap: 20px;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .catastrophe-card {
-  position: relative;
-  overflow: hidden;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.catastrophe-card__date--banner{
-    background-color: #333;
-    color: white;
-    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 0.9rem;
+    transition: transform 0.3s ease;
 }
-
-
 
 
 .catastrophe-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
+    
 .catastrophe-card__image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
+
+
 
 .catastrophe-card__overlay {
-  padding: 20px;
+    padding: 20px;
 }
 
+
+.catastrophe-card--banner{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
 .catastrophe-card__title {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .catastrophe-card__info {
-  font-size: 1em;
-  color: #555;
-  margin-bottom: 15px;
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .catastrophe-card__button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .catastrophe-card__button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 /* Estilos para los títulos y textos dentro de la tarjeta */
@@ -170,8 +201,10 @@ body {
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
-    width: 100%; /* Ajusta el botón al 100% del ancho */
-    max-width: 200px; /* Para evitar que el botón sea demasiado ancho */
+    width: 100%;
+    /* Ajusta el botón al 100% del ancho */
+    max-width: 200px;
+    /* Para evitar que el botón sea demasiado ancho */
     margin-top: 10px;
     transition: background-color 0.3s ease-in-out;
 }
@@ -184,14 +217,17 @@ body {
 /* Estilo de la imagen dentro de la tarjeta */
 .catastrophe-card__image {
     width: 100%;
-    height: 200px; /* Ajustar la altura de la imagen para que se vea bien en todas las pantallas */
+    height: 200px;
+    /* Ajustar la altura de la imagen para que se vea bien en todas las pantallas */
     object-fit: cover;
     object-position: center;
+    box-sizing: border-box;
 }
 
 /* Superposición de la tarjeta */
 .catastrophe-card__overlay {
     position: absolute;
+    box-sizing: border-box;
     top: 0;
     left: 0;
     right: 0;
@@ -221,11 +257,22 @@ body {
     border-radius: 10px;
 }
 
-.catastrophe-card--banner .catastrophe-card__image {
+.catastrophe-card__date--banner{
+    
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    
+
+}
+
+
+.catastrophe-card--banner {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+
 
 
 
@@ -248,7 +295,6 @@ body {
     text-align: center;
     font-size: 0.9rem;
 }
-
 /* Estilos para la sección de explicación */
 .dana-explanation {
     background-color: #ffffff;
@@ -315,11 +361,13 @@ button {
 /* Media Queries */
 @media (max-width: 1024px) {
     .catastrophes {
-        grid-template-columns: repeat(2, 1fr); /* Para pantallas medianas, dos tarjetas por fila */
+        grid-template-columns: repeat(2, 1fr);
+        /* Para pantallas medianas, dos tarjetas por fila */
     }
 
     .catastrophe-card__image {
-        height: 250px; /* Reducir la altura de las imágenes para pantallas más pequeñas */
+        height: 250px;
+        /* Reducir la altura de las imágenes para pantallas más pequeñas */
     }
 
     .catastrophe-card__title {
@@ -334,7 +382,8 @@ button {
 
 @media (max-width: 768px) {
     .catastrophes {
-        grid-template-columns: 1fr; /* Una tarjeta por fila en pantallas pequeñas */
+        grid-template-columns: 1fr;
+        /* Una tarjeta por fila en pantallas pequeñas */
     }
 
     .catastrophe-card__image {
@@ -353,7 +402,8 @@ button {
 
 @media (max-width: 480px) {
     .catastrophes {
-        grid-template-columns: 1fr; /* Aún más pequeño en dispositivos muy pequeños */
+        grid-template-columns: 1fr;
+        /* Aún más pequeño en dispositivos muy pequeños */
     }
 
     .catastrophe-card__image {
