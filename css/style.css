@@ -12,32 +12,33 @@ body {
 
 /* Estilos para el header */
 .header {
+    display: flex;                      /* Utilizamos Flexbox */
+    align-items: center;                /* Alineamos los elementos verticalmente */
+    justify-content: space-between;     /* Distribuimos los elementos a los extremos */
+    width: 100%;                         /* El header ocupa todo el ancho de la pantalla */
+    padding: 20px 30px;                  /* Espaciado alrededor del header */
+    background-color: #fff;
+    /* border-bottom: 2px solid #ccc;      Línea divisoria debajo */
+}
+
+/* Contenedor de logos (solo el logo de HelpNow) */
+.header .logo {
     display: flex;
-    flex-direction: column;       /* Organiza los elementos en columna */
-    align-items: center;          /* Centra los elementos horizontalmente */
-    padding: 20px;
-    background-color: #f4f3f3;
-    /* border-bottom: 2px solid #ccc; Línea divisoria debajo */
+    align-items: center;                /* Alineamos la imagen verticalmente */
 }
 
-/* Contenedor de logos */
-.logo {
-    display: flex;
-    justify-content: space-between;  /* Logo a la derecha y mundo a la izquierda */
-    width: 100%;                     /* Asegura que los logos ocupen todo el ancho */
-    padding: 10px 30px;              /* Espaciado alrededor */
-    margin-bottom: 20px;             /* Espacio entre los logos y el menú */
+.header .logo img {
+    max-height: 100px;                   /* Tamaño máximo de la imagen */
+    /* Si necesitas un tamaño más ajustado, puedes usar width en lugar de max-height, como max-width: 100px; */
 }
 
-.logo img {
-    max-height: 100px;              /* Tamaño máximo del logo */
-}
-
-/* Menú centrado debajo de los logos */
+/* Menú centrado */
 .header__nav {
-    width: 100%;                     /* Asegura que el menú ocupe todo el ancho */
-    text-align: end;              /* Centra el texto dentro del menú */
+    display: flex;
+    justify-content: end;             /* Centra el menú horizontalmente */
+    flex-grow: 1;                        /* Permite que el menú ocupe el espacio restante */
 }
+
 
 .nav__list {
     list-style-type: none;
@@ -72,6 +73,8 @@ body {
 
 /* Catastrophe Cards */
 
+
+
 .catastrophes {
   display: grid;
   gap: 20px;
@@ -90,6 +93,17 @@ body {
   text-align: center;
   transition: transform 0.3s ease;
 }
+
+.catastrophe-card__date--banner{
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+
 
 .catastrophe-card:hover {
   transform: translateY(-5px);
