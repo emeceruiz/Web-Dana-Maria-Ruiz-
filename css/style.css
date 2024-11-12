@@ -134,7 +134,7 @@ body {
     overflow: hidden;
     background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -142,52 +142,19 @@ body {
 
 .catastrophe-card:hover {
     transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.1);
+
 }
 
     
 .catastrophe-card__image {
     width: 100%;
-    height: 350px;
+    height: 300px;
     object-fit: cover;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    
 }
-
-
-
-
-.catastrophe-card__button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.catastrophe-card__button:hover {
-    background-color: #0056b3;
-}
-
-
-
-/* Ajustes de texto en el banner
-.catastrophe-card--banner .catastrophe-card__title {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.catastrophe-card--banner .catastrophe-card__info {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #f9f9f9;
-} */
-
-
 
 
 .catastrophe-card__button {
@@ -201,7 +168,7 @@ body {
     /* Ajusta el botón al 100% del ancho */
     max-width: 200px;
     /* Para evitar que el botón sea demasiado ancho */
-    margin-top: 10px;
+    margin-top: 20px;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -210,10 +177,10 @@ body {
 }
 
 
-Estilo de la imagen dentro de la tarjeta
+/* Estilo de la imagen dentro de la tarjeta */
 .catastrophe-card__image {
     width: 100%;
-    height: 400px;
+    height: 350px;
     /* Ajustar la altura de la imagen para que se vea bien en todas las pantallas */
     object-fit: cover;
     object-position: center;
@@ -228,7 +195,7 @@ Estilo de la imagen dentro de la tarjeta
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -243,7 +210,6 @@ Estilo de la imagen dentro de la tarjeta
 
 
 
-
 /* Banner */
 .catastrophe-card--banner {
 
@@ -255,39 +221,36 @@ Estilo de la imagen dentro de la tarjeta
     display: flex;
     flex-direction: column;         /* Coloca los elementos en columna */
     align-items: center;            /* Centra los elementos horizontalmente */
-    justify-content: center;        /* Centra los elementos verticalmente */
-
-    
+    justify-content: center;        /* Centra los elementos verticalmente */ 
     
 }
 
-.catastrophe-card__date--banner{
-    
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        
-    
-
+.catastrophe-card__date--banner {
+    font-size: 1.5rem; /* Ajustar a un tamaño adecuado */
+    margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 /* Estilos para los títulos y textos dentro de la tarjeta */
 .catastrophe-card__date {
     font-size: 1.2rem;
-    color:white;
-
+    line-height: 1.5;
+    color: white;
 }
 
 
 .catastrophe-card__title {
-    font-size: 1.5em;
+    font-size: 2rem;
     margin-bottom: 10px;
+    line-height: 1.5;
     color: white;
 }
 
 .catastrophe-card__info {
-    font-size: 0.9rem;              /* Tamaño de la información adicional */
+    font-size: 1.2rem; /* Tamaño de la información adicional ajustado */
     color: white;    
-    margin-bottom: 15px;                /* Color de la información adicional */
+    line-height: 1.5;
+    margin-bottom: 15px;
 } 
 
 
@@ -316,7 +279,7 @@ Estilo de la imagen dentro de la tarjeta
 }
 
 .dana-explanation__title {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #333;
     margin-bottom: 20px;
 }
@@ -396,42 +359,103 @@ button {
     }
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
-    .catastrophes {
-        grid-template-columns: 1fr;
-        /* Una tarjeta por fila en pantallas pequeñas */
+    .header {
+        flex-direction: column; /* Coloca el logo y el menú en columna */
+        align-items: center; /* Centra los elementos del header */
     }
 
-    .catastrophe-card__image {
-        height: 200px;
+    .header__nav {
+        width: 100%; /* Asegura que el menú ocupe el ancho completo */
+        justify-content: center; /* Centra los elementos del menú */
+        padding: 10px 0; /* Ajusta el padding si es necesario */
     }
 
-    .catastrophe-card__title {
-        font-size: 1.3rem;
+    .nav__list {
+        display: flex; /* Mantiene los elementos en fila */
+        flex-direction: row; /* Asegura que estén en horizontal */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        gap: 20px; /* Espacio entre los elementos */
     }
 
-    .catastrophe-card__button {
-        width: 100%;
-        max-width: 250px;
+    .nav__item a {
+        padding: 10px; /* Ajusta el padding si es necesario */
+    }
+}
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column; /* Asegura que el logo y el menú sigan en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .header__nav {
+        width: 100%; /* Asegura que el menú ocupe el ancho completo */
+        justify-content: center; /* Centra los elementos */
+        padding: 10px 0; /* Ajusta el padding si es necesario */
+    }
+
+    .nav__list {
+        display: flex; /* Mantiene los elementos en fila */
+        flex-direction: row; /* Asegura que estén en horizontal */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        gap: 10px; /* Ajusta el espacio entre los elementos */
+    }
+
+    .nav__item a {
+        padding: 8px; /* Ajusta el padding para pantallas más pequeñas */
+        font-size: 0.9rem; /* Ajusta el tamaño de fuente si es necesario */
     }
 }
 
+
+/* Media Queries para #mapa */
+@media (max-width: 768px) {
+    #mapa {
+        padding: 20px; /* Ajusta el padding según sea necesario */
+        height: 300px; /* Ajusta la altura del mapa para pantallas más pequeñas */
+        overflow: hidden; /* Oculta cualquier desbordamiento */
+    }
+
+    #mapa iframe {
+        width: 100%; /* Hace que el iframe ocupe el ancho completo */
+        height: auto; /* Mantiene la relación de aspecto */
+    }
+}
+
+/* Media Queries para .dana-explanation */
+@media (max-width: 768px) {
+    .dana-explanation {
+        padding: 20px; /* Ajusta el padding */
+        max-width: 100%; /* Asegura que la sección ocupe el ancho completo */
+    }
+
+    .dana-explanation__title {
+        font-size: 2rem; /* Ajusta el tamaño del título */
+    }
+
+    .dana-explanation__text {
+        font-size: 0.9rem; /* Ajusta el tamaño del texto */
+        line-height: 1.4; /* Mejora la legibilidad */
+    }
+
+    .dana-explanation__image img {
+        width: 100%; /* Asegura que la imagen sea responsiva */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas */
 @media (max-width: 480px) {
-    .catastrophes {
-        grid-template-columns: 1fr;
-        /* Aún más pequeño en dispositivos muy pequeños */
+    #mapa {
+        height: 250px; /* Ajusta aún más la altura del mapa */
     }
 
-    .catastrophe-card__image {
-        height: 150px;
+    .dana-explanation__title {
+        font-size: 1.5rem; /* Ajusta el tamaño del título para pantallas pequeñas */
     }
 
-    .catastrophe-card__title {
-        font-size: 1.1rem;
-    }
-
-    .catastrophe-card__button {
-        width: 100%;
-        max-width: 200px;
+    .dana-explanation__text {
+        font-size: 0.8rem; /* Tamaño del texto más pequeño */
     }
 }
